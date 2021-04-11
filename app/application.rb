@@ -44,9 +44,10 @@ class Application
   
   def add(item)
     if @@items.include?(item)
-      @@cart << item
+      return @@cart << item
     else
-      "Couldn't find #{item}"
+      return "Couldn't find #{item}"
+      
     end
   end 
   
