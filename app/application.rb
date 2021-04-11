@@ -25,8 +25,8 @@ class Application
         end 
         
     elsif req.path.match(/add/)
-     
-      
+    add_item = req.params["item"]
+    resp.write add(add_item)
     else
       resp.write "Path Not Found"
     end
@@ -41,6 +41,14 @@ class Application
       return "Couldn't find #{search_term}"
     end
   end
+  
+  def add(item)
+    if @@items.include?(item)
+      @@cart << item
+    else
+      "Couldn't find #{item}"
+    end
+  end 
   
   
 end
