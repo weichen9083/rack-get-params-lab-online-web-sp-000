@@ -44,10 +44,13 @@ class Application
   
   def add(item)
     if @@items.include?(item)
-      return @@cart << item
+        @@cart << item
+        resp.write "added #{item}"
+      else
+        resp.write "We don't have that item"
+      end
     else
-      return "Couldn't find #{item}"
-      
+      resp.write "Path Not Found"
     end
   end 
   
