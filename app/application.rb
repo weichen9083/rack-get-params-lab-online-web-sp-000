@@ -42,15 +42,4 @@ class Application
     end
   end
   
-  def add(item)
-    if @@items.include?(item)
-        @@cart << item
-        resp.write "added #{item}"
-    else
-        resp.write "We don't have that item"
-    
-    
-  end 
   
-  
-end
