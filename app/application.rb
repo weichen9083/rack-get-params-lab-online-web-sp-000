@@ -23,6 +23,9 @@ class Application
           end
           
         end 
+        
+    elsif req.path.match(/add/)
+     
       
     else
       resp.write "Path Not Found"
@@ -39,7 +42,5 @@ class Application
     end
   end
   
-  def add(item)
-    @@cart << item
-  end 
+  
 end
